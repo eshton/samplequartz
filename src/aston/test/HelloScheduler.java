@@ -36,7 +36,6 @@ public class HelloScheduler {
             				.withIntervalInSeconds(2)
             				.repeatForever())            
             		.build();
-            
 
             // Schedule the job with the trigger just created
             scheduler.scheduleJob(job, trigger);

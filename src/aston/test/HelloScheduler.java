@@ -42,6 +42,8 @@ public class HelloScheduler {
             
             // Wait a bit until shutdown
             Thread.sleep(6000);
+            
+            // Shut down
             scheduler.shutdown();
 
         } catch (SchedulerException se) {

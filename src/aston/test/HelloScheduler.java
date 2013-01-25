@@ -22,7 +22,7 @@ public class HelloScheduler {
             // Get a Scheduler instance from the factory
             Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
             scheduler.start();
-
+            
             // Define the job and tie it to our HelloJob class
             JobDetail job = newJob(HelloJob.class)
             		.withIdentity("job1", "group1")
@@ -33,16 +33,17 @@ public class HelloScheduler {
             		.withIdentity("trigger1", "group1")
             		.startNow()
             		.withSchedule(simpleSchedule()
-            				.withIntervalInSeconds(2)
+            				.withIntervalInSeconds(10)
             				.repeatForever())            
             		.build();
-            
 
             // Schedule the job with the trigger just created
             scheduler.scheduleJob(job, trigger);
             
             // Wait a bit until shutdown
-            Thread.sleep(6000);
+            Thread.sleep(6000000);
+            
+            // Shut down
             scheduler.shutdown();
 
         } catch (SchedulerException se) {

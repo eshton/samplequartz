@@ -41,6 +41,7 @@ public class HelloScheduler {
             scheduler.scheduleJob(job, trigger);
             
             // Wait a bit until shutdown
+
             Thread.sleep(6000000);
             
             // Shut down
